@@ -4,10 +4,23 @@ import { TransferEvent } from '../generated/schema'
 export function handleTransfer(event: Transfer): void {
   // Create a new TransferEvent entity based on the transaction hash of the event
   // let ...
+  let transferEvent=new TransferEvent();
 
+  let contract = ENSToken.bind(event.address)
+ 
   // Populate transferEvent fields based on event metadata
   // transferEvent.timestamp = 
+  transferEvent.id = contract.id()
+  transferEvent.timestamp= contract.timestamp();
+  transferEvent.block = contract.block()
+  transferEvent.fromAddress = contract.fromAddress()
+  transferEvent.toAddress = contract.fromAddress()
+  transferEvent.transferAmount=contract.transferAmount();
 
+
+  transferEvent.fromBalance = contract.balanceOf()
+  transferEvent.toBalance = contract.balanceOf()
+  
 
   // Use the balanceOf public read-only function of the ENSToken 
   // contract to query the balance of the "from" and "to" addresses
