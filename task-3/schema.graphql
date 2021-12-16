@@ -1,0 +1,26 @@
+type TransferEvent @entity {
+
+  "Transaction hash"
+  id: ID!
+
+  "Transfer timestamp"
+  timestamp: Int!
+
+  "Transfer block"
+  block: BigInt!
+
+  "Address where the transfer was sent from"
+  fromAddress: Bytes!
+
+  "Address where the transfer was sent to"
+  toAddress: Bytes!
+
+  "Transfer value"
+  transferAmount: BigInt!
+
+  "Token balance in the address where the transfer was sent from after transfer executed"
+  fromBalance: BigInt!
+
+  "Token balance in the address where the transfer was sent to after transfer executed"
+  toBalance: BigInt!
+}

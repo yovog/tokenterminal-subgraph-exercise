@@ -1,0 +1,24 @@
+specVersion: 0.0.2
+schema:
+  file: ./schema.graphql
+dataSources:
+  - kind: ethereum/contract
+    name: ENSToken
+    network: mainnet
+    source:
+      address: "0xC18360217D8F7Ab5e7c516566761Ea12Ce7F9D72"
+      abi: ENSToken
+      startBlock: 13770000 # 13533418 is the block when ENS was deployed, but starting here would cause the subgraph to take a long time to sync
+    mapping:
+      kind: ethereum/events
+      apiVersion: 0.0.5
+      language: wasm/assemblyscript
+      entities:
+        - TransferEvent
+      abis:
+        - name: ENSToken
+          file: ./abis/ENSToken.json
+      eventHandlers:
+        - event: Transfer(indexed address,indexed address,uint256)
+          handler: handleTransfer
+      file: ./src/mapping.ts

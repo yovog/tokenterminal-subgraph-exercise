@@ -1,0 +1,16 @@
+{
+  "name": "task-3",
+  "license": "MIT",
+  "scripts": {
+    "codegen": "graph codegen",
+    "build": "graph build",
+    "deploy": "graph deploy --node https://api.thegraph.com/deploy/ YOUR-GITHUB-NAME/task-3",
+    "create-local": "graph create --node http://localhost:8020/ YOUR-GITHUB-NAME/task-3",
+    "remove-local": "graph remove --node http://localhost:8020/ YOUR-GITHUB-NAME/task-3",
+    "deploy-local": "graph deploy --node http://localhost:8020/ --ipfs http://localhost:5001 YOUR-GITHUB-NAME/task-3"
+  },
+  "dependencies": {
+    "@graphprotocol/graph-cli": "0.23.1",
+    "@graphprotocol/graph-ts": "0.23.1"
+  }
+}
