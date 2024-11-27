@@ -67,4 +67,4 @@ Each of the directories linked above provide instructions specific for each task
 - If you get stuck or find it difficult to finish any task on your own, reach out to us at `robert@tokenterminal.xyz`. We're happy to hop on a call and help out!
 - We will discuss your solutions during a technical interview.
 
-Good luck! 💪
+Good luck! 💪💪💪💪
